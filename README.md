@@ -49,4 +49,4 @@ python main.py
 
 ## Demonstration and tutorial
 
-Please see [`demo.ipynb`](src/demo.ipynb) for demonstration, and [`Tutorial.ipynb`](src/Tutorial.ipynb) for tutorial.
+Please see [`demo.ipynb`](src/demo.ipynb) for demonstration, and [`tutorial.ipynb`](src/tutorial.ipynb) for tutorial.
