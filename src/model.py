@@ -16,11 +16,15 @@ class VGG16Transfer(NNClassifier):
     def __init__(self, num_classes, fine_tuning=False):
         super(VGG16Transfer, self).__init__()
         vgg = tv.models.vgg16_bn(pretrained=True)
+        # train only the task-specific last FC layer 
+        # and will keep all other layers as frozen
+        # i.e., they will not be trained
         for param in vgg.parameters():
             param.requires_grad = fine_tuning
         self.features = vgg.features
         self.classifier = vgg.classifier
         num_ftrs = vgg.classifier[6].in_features
+        # replace the last output layer with a FC layer which has `num_classes` output features
         self.classifier[6] = nn.Linear(num_ftrs, num_classes)
 
     def forward(self, x):
@@ -38,6 +42,7 @@ class Resnet18Transfer(NNClassifier):
             param.requires_grad = fine_tuning
         self.classifier = resnet
         num_ftrs = resnet.fc.in_features
+        # replace the last output layer with a FC layer which has `num_classes` output features
         self.classifier.fc = nn.Linear(num_ftrs, num_classes)
 
     def forward(self, x):
