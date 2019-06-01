@@ -23,10 +23,6 @@ def parse():
     parser.add_argument('--image_size', type=tuple, default=(224, 224))
     parser.add_argument('--batch_size', type=int, default=16)
 
-    parser.add_argument('--train', action='store_true',
-                        help='whether train DQN')
-    parser.add_argument('--test', action='store_true', help='whether test DQN')
-
     return parser.parse_args()
 
 
