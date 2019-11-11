@@ -14,7 +14,7 @@ transfer learning models: use pretrained vgg16_bn and resnet18
 
 ### `nntools.py`
 
-course material of UCSD ECE 285 MLIP
+Neural Network tools developed for UCSD ECE285 MLIP. Copyright 2019. Charles Deledalle, Sneha Gupta, Anurag Paul, Inderjot Saggu.
 
 PS: I modify Experiment.run() function.
 
